@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project S - Loading</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project S - Redirecting</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 50px; }
-    .loader { border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 2s linear infinite; margin: 0 auto; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+    .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+    .loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    a { color: #3498db; text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
-  <div class="loader"></div>
-  <h2>Project 's' Load ho raha hai...</h2>
-  <p>Agar 5 second mein shuru na ho, toh <a id="manualLink" href="#">yahan click karein</a>.</p>
+
+  <div class="card">
+    <div class="loader"></div>
+    <h2 style="margin-bottom: 10px;">Project 's' Dashboard</h2>
+    <p>Please wait, loading data...</p>
+    <p style="font-size: 0.8rem; color: #666;">If not redirected, <a id="manual" href="#">click here</a></p>
+  </div>
 
   <script>
-    // APNA NAYA EXEC URL NICHE WALE QUOTES MEIN DALO
-    var finalUrl = "https://script.google.com/macros/s/AKfycbx2FIoKijRYOhjDxIJa1bX7PuGkfDRwOECthTs-ZhIYWZcpWk-pH5b1Kvz573pKdIS4MA/exec";
+    // 1. YAHAN APNA ASLI LINK PASTE KAREIN (Pura link)
+    var myGoogleLink = "https://script.google.com/macros/s/AKfycbx2FIoKijRYOhjDxIJa1bX7PuGkfDRwOECthTs-ZhIYWZcpWk-pH5b1Kvz573pKdIS4MA/exec";
 
-    // Manual link ko update karne ke liye
-    document.getElementById('manualLink').href = finalUrl;
+    // 2. Button par link set karna
+    document.getElementById('manual').href = myGoogleLink;
 
-    // Turant redirect karne ke liye
-    window.location.replace(finalUrl);
+    // 3. Sabse fast redirect ka tarika
+    setTimeout(function() {
+       window.location.replace(myGoogleLink);
+    }, 500);
   </script>
+
 </body>
 </html>
