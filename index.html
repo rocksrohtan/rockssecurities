@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/APKA_GOOGLE_SCRIPT_LINK/exec">
-  <script type="text/javascript">
-    window.location.href = https://script.google.com/macros/s/AKfycbx2FIoKijRYOhjDxIJa1bX7PuGkfDRwOECthTs-ZhIYWZcpWk-pH5b1Kvz573pKdIS4MA/exec
-  </script>
-  <title>Redirecting...</title>
+  <title>Project S - Loading</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+    .loader { border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 2s linear infinite; margin: 0 auto; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
 </head>
 <body>
-  Agar aap automatic redirect nahi huye, toh <a href=https://script.google.com/macros/s/AKfycbx2FIoKijRYOhjDxIJa1bX7PuGkfDRwOECthTs-ZhIYWZcpWk-pH5b1Kvz573pKdIS4MA/exec>yahan click karein</a>.
+  <div class="loader"></div>
+  <h2>Project 's' Load ho raha hai...</h2>
+  <p>Agar 5 second mein shuru na ho, toh <a id="manualLink" href="#">yahan click karein</a>.</p>
+
+  <script>
+    // APNA NAYA EXEC URL NICHE WALE QUOTES MEIN DALO
+    var finalUrl = "https://script.google.com/macros/s/AKfycbx2FIoKijRYOhjDxIJa1bX7PuGkfDRwOECthTs-ZhIYWZcpWk-pH5b1Kvz573pKdIS4MA/exec";
+
+    // Manual link ko update karne ke liye
+    document.getElementById('manualLink').href = finalUrl;
+
+    // Turant redirect karne ke liye
+    window.location.replace(finalUrl);
+  </script>
 </body>
 </html>
